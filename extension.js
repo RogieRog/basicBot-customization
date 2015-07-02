@@ -1,5 +1,8 @@
 (function () {
 
+    //Change this to your GitHub username so you don't have to modify so many things.
+    var fork = "RogieRog";
+
     //Define our function responsible for extending the bot.
     function extend() {
         //If the bot hasn't been loaded properly, try again in 1 second(s).
@@ -524,25 +527,33 @@
     localStorage.setItem("basicBotsettings", JSON.stringify({
         botName: "CletusBot",
         language: "english",
-        startupEmoji: true,
-        cmdDeletion: false,
         chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
+        startupCap: 1, // 1-200
+        startupVolume: 0, // 0-100
+        startupEmoji: true,
+        autowoot: true,
+        smartSkip: true,
+        cmdDeletion: false,
         maximumAfk: 45,
         afkRemoval: true,
         maximumDc: 60,
         bouncerPlus: true,
+        blacklistEnabled: true,
         lockdownEnabled: false,
         lockGuard: false,
         maximumLocktime: 10,
         cycleGuard: true,
         maximumCycletime: 10,
+        voteSkip: false,
+        voteSkipLimit: 10,
+        historySkip: false,
         timeGuard: true,
         maximumSongLength: 13,
         autodisable: true,
         commandCooldown: 30,
         usercommandsEnabled: true,
-        lockskipPosition: 3,
-        lockskipReasons: [
+        skipPosition: 2,
+        skipReasons: [
             ["theme", "This song does not fit the room theme. "],
             ["op", "This song is on the OP list. "],
             ["history", "This song is in the history. "],
@@ -555,8 +566,8 @@
         afkRankCheck: "manager",
         motdEnabled: true,
         motdInterval: 5,
-        //motd: "mmm beer :beers:",
-        motd: " top o' the mornin' to ya. beer, bangers and mash! :beers:",
+        motd: "mmm beer :beers:",
+        //motd: " top o' the mornin' to ya. beer, bangers and mash! :beers:",
         filterChat: true,
         etaRestriction: false,
         welcome: true,
@@ -569,7 +580,12 @@
         intervalMessages: [],
         messageInterval: 5,
         songstats: true,
-        commandLiteral: "!"
+        commandLiteral: "!",
+        blacklists: {
+          NSFW: "https://rawgit.com/" + fork + "/basicBot-customization/master/blacklists/NSFWlist.json",
+          OP: "https://rawgit.com/" + fork + "/basicBot-customization/master/blacklists/OPlist.json",
+          BANNED: "https://rawgit.com/" + fork + "/basicBot-customization/master/blacklists/BANNEDlist.json"
+        }
     }));
 
     //Start the bot and extend it when it has loaded.
