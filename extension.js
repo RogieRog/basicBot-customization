@@ -560,7 +560,7 @@
         welcome: true,
         opLink: null,
         rulesLink: null,
-        themeLink: "Country, Southern Rock, Folk, or Blues. Have some fun. Leave the drama at the door. Keep it somewhat family friendly. Mods have final say. Do not meh the DJs. NO :ghost: DJing please!!!!!",
+        themeLink: null,
         fbLink: "https://www.facebook.com/groups/TheCountryClub.Plug.DJ/",
         youtubeLink: null,
         website: null,
