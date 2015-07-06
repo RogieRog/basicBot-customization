@@ -555,7 +555,7 @@
         motdInterval: 5,
         motd: "mmm beer :beers:",
         //motd: " top o' the mornin' to ya. beer, bangers and mash! :beers:",
-        filterChat: true,
+        filterChat: false,
         etaRestriction: false,
         welcome: true,
         opLink: null,
