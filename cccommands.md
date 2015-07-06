@@ -2,7 +2,7 @@ Country Club specfic commands
 
 |Command | Arguments |  Description |
 |:------:|:---------:|:--------------------------------------:|
-|!cccommands | | Country Club specfic commands |
+|!cccommands/ccc | | Country Club specfic commands |
 |!bacon | | |
 |!baanjo/banjo | | |
 |!beer | | |
