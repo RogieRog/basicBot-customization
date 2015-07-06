@@ -130,7 +130,7 @@
         }; // broom
 
         bot.commands.cccommandsCommand = {
-            command: 'cccommands',
+            command: ['cccommands', 'ccc'],
             rank: 'user',
             type: 'exact',
             functionality: function (chat, cmd) {
@@ -140,7 +140,7 @@
                     API.sendChat("/me Country Club specific help: http://git.io/-kl-kQ");
                 }
             }
-        }; // cccommands
+        }; // cccommands||ccc
 
         bot.commands.cheerCommand = {
             command: 'cheer',
