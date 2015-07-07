@@ -560,7 +560,7 @@
         welcome: true,
         opLink: null,
         rulesLink: null,
-        themeLink: null,
+        themeLink: "Country, Southern Rock, Folk, or Blues.",
         fbLink: "https://www.facebook.com/groups/TheCountryClub.Plug.DJ/",
         youtubeLink: null,
         website: null,
