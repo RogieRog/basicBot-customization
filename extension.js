@@ -364,13 +364,13 @@
             var name = msg.substring(space + 2);
             var user = bot.userUtilities.lookupUserName(name);
             if (user === false || !user.inRoom) {
-              return API.sendChat("/me I don't see " + name + " in room I guess I'll slap your grandma Adkins' style!");
+              return API.sendChat("/me I don't see " + name + " in the room I guess I'll slap your grandma Adkins' style!");
             }
             else if (user.username === chat.un) {
-              return API.sendChat("\/me " + chat.un ", you're a bit insensitive, aren't you? Maybe someone else wants to be abused!");
+              return API.sendChat("/me " + chat.un + ", you're a bit insensitive, aren't you? Maybe someone else wants to be abused!");
             }
             else {
-              return API.sendChat("/me Wowzer! " + chat.un + ", just gave " + name " a wet willy!"); 
+              return API.sendChat("/me Wowzer! " + chat.un + ", just gave " + name + " a wet willy!"); 
             }
           }
         }
