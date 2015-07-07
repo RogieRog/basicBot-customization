@@ -35,6 +35,22 @@
 
 */
 
+    // taken from basicBot directly
+    var subChat = function (chat, obj) {
+      if (typeof chat === "undefined") {
+          API.chatLog("There is a chat text missing.");
+          console.log("There is a chat text missing.");
+          return "[Error] No text message found.";
+
+          // TODO: Get missing chat messages from source.
+      }
+      var lit = '%%';
+      for (var prop in obj) {
+          chat = chat.replace(lit + prop.toUpperCase() + lit, obj[prop]);
+      }
+      return chat;
+    };
+
     bot.commands.baconCommand = {
       command: 'bacon',
       rank: 'user',
@@ -549,66 +565,66 @@
 
   localStorage.setItem("basicBotsettings", JSON.stringify({
     botName: "CletusBot",
-  language: "english",
-  chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
-  startupCap: 1, // 1-200
-  startupVolume: 0, // 0-100
-  startupEmoji: true,
-  autowoot: true,
-  smartSkip: true,
-  cmdDeletion: false,
-  maximumAfk: 45,
-  afkRemoval: true,
-  maximumDc: 60,
-  bouncerPlus: true,
-  blacklistEnabled: true,
-  lockdownEnabled: false,
-  lockGuard: false,
-  maximumLocktime: 10,
-  cycleGuard: true,
-  maximumCycletime: 10,
-  voteSkip: false,
-  voteSkipLimit: 10,
-  historySkip: false,
-  timeGuard: true,
-  maximumSongLength: 13,
-  autodisable: true,
-  commandCooldown: 30,
-  usercommandsEnabled: true,
-  skipPosition: 2,
-  skipReasons: [
-    ["theme", "This song does not fit the room theme. "],
-  ["op", "This song is on the OP list. "],
-  ["history", "This song is in the history. "],
-  ["mix", "You played a mix, which is against the rules. "],
-  ["sound", "The song you played had bad sound quality or no sound. "],
-  ["nsfw", "The song you contained was NSFW (image or sound). "],
-  ["unavailable", "The song you played was not available for some users. "]
+    language: "english",
+    chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
+    startupCap: 1, // 1-200
+    startupVolume: 0, // 0-100
+    startupEmoji: true,
+    autowoot: true,
+    smartSkip: true,
+    cmdDeletion: false,
+    maximumAfk: 45,
+    afkRemoval: true,
+    maximumDc: 60,
+    bouncerPlus: true,
+    blacklistEnabled: true,
+    lockdownEnabled: false,
+    lockGuard: false,
+    maximumLocktime: 10,
+    cycleGuard: true,
+    maximumCycletime: 10,
+    voteSkip: false,
+    voteSkipLimit: 10,
+    historySkip: false,
+    timeGuard: true,
+    maximumSongLength: 13,
+    autodisable: true,
+    commandCooldown: 30,
+    usercommandsEnabled: true,
+    skipPosition: 2,
+    skipReasons: [
+      ["theme", "This song does not fit the room theme. "],
+      ["op", "This song is on the OP list. "],
+      ["history", "This song is in the history. "],
+      ["mix", "You played a mix, which is against the rules. "],
+      ["sound", "The song you played had bad sound quality or no sound. "],
+      ["nsfw", "The song you contained was NSFW (image or sound). "],
+      ["unavailable", "The song you played was not available for some users. "]
     ],
-  afkpositionCheck: 15,
-  afkRankCheck: "manager",
-  motdEnabled: true,
-  motdInterval: 5,
-  motd: "mmm beer :beers:",
-  //motd: " top o' the mornin' to ya. beer, bangers and mash! :beers:",
-  filterChat: false,
-  etaRestriction: false,
-  welcome: true,
-  opLink: null,
-  rulesLink: null,
-  themeLink: "Country, Southern Rock, Folk, or Blues.",
-  fbLink: "https://www.facebook.com/groups/TheCountryClub.Plug.DJ/",
-  youtubeLink: null,
-  website: null,
-  intervalMessages: [],
-  messageInterval: 5,
-  songstats: true,
-  commandLiteral: "!",
-  blacklists: {
-    NSFW: "https://rawgit.com/" + fork + "/basicBot-customization/master/blacklists/NSFWlist.json",
-    OP: "https://rawgit.com/" + fork + "/basicBot-customization/master/blacklists/OPlist.json",
-    BANNED: "https://rawgit.com/" + fork + "/basicBot-customization/master/blacklists/BANNEDlist.json"
-  }
+    afkpositionCheck: 15,
+    afkRankCheck: "manager",
+    motdEnabled: true,
+    motdInterval: 5,
+    motd: "mmm beer :beers:",
+    //motd: " top o' the mornin' to ya. beer, bangers and mash! :beers:",
+    filterChat: false,
+    etaRestriction: false,
+    welcome: true,
+    opLink: null,
+    rulesLink: null,
+    themeLink: "Country, Southern Rock, Folk, or Blues.",
+    fbLink: "https://www.facebook.com/groups/TheCountryClub.Plug.DJ/",
+    youtubeLink: null,
+    website: null,
+    intervalMessages: [],
+    messageInterval: 5,
+    songstats: true,
+    commandLiteral: "!",
+    blacklists: {
+      NSFW: "https://rawgit.com/" + fork + "/basicBot-customization/master/blacklists/NSFWlist.json",
+      OP: "https://rawgit.com/" + fork + "/basicBot-customization/master/blacklists/OPlist.json",
+      BANNED: "https://rawgit.com/" + fork + "/basicBot-customization/master/blacklists/BANNEDlist.json"
+    }
   }));
 
   //Start the bot and extend it when it has loaded.
