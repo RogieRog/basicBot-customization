@@ -362,7 +362,7 @@
           }
           else {
             var name = msg.substring(space + 2);
-            var user = basicBot.userUtilities.lookupUserName(name);
+            var user = bot.userUtilities.lookupUserName(name);
             if (user === false || !user.inRoom) {
               //return API.sendChat(subChat(basicBot.chat.nousercookie, {name: name}));
               API.sendChat("/me testing punish2");
