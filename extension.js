@@ -349,6 +349,9 @@
       command: 'punish',
       rank: 'user',
       type: 'startsWith',
+      punishbot: "\/me eats a cookie.",
+      punishself: "\/me @%%NAME%%, you're a bit insensitive, aren't you? Maybe someone else wants to be spanked!", 
+      punishnoone: "\/me I don't see %%NAME%% in room I guess I'll slap your grandma Adkins' style!",
       functionality: function (chat, cmd) {
         if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
         if (!bot.commands.executable(this.rank, chat)) return void (0);
@@ -357,19 +360,17 @@
 
           var space = msg.indexOf(' ');
           if (space === -1) {
-            API.sendChat("/me testing punish1");
+            API.sendChat(this.punishbot);
             return false;
           }
           else {
             var name = msg.substring(space + 2);
             var user = bot.userUtilities.lookupUserName(name);
             if (user === false || !user.inRoom) {
-              //return API.sendChat(subChat(basicBot.chat.nousercookie, {name: name}));
-              API.sendChat("/me testing punish2");
+              return API.sendChat(subChat(bot.chat.punishnoone, {name: name}));
             }
             else if (user.username === chat.un) {
-              //return API.sendChat(subChat(basicBot.chat.selfcookie, {name: name}));
-              API.sendChat("/me testing punish3");
+              return API.sendChat(subChat(bot.chat.punishself, {name: name}));
             }
             else {
               //return API.sendChat(subChat(basicBot.chat.cookie, {nameto: user.username, namefrom: chat.un, cookie: this.getCookie()}));
