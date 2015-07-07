@@ -383,10 +383,10 @@
             var name = msg.substring(space + 2);
             var user = bot.userUtilities.lookupUserName(name);
             if (user === false || !user.inRoom) {
-              return API.sendChat(subChat(bot.chat.punishnoone, {name: name}));
+              return API.sendChat(subChat(this.punishnoone, {name: name}));
             }
             else if (user.username === chat.un) {
-              return API.sendChat(bot.subChat(bot.chat.punishself, {name: name}));
+              return API.sendChat(bot.subChat(this.punishself, {name: name}));
             }
             else {
               //return API.sendChat(subChat(basicBot.chat.cookie, {nameto: user.username, namefrom: chat.un, cookie: this.getCookie()}));
