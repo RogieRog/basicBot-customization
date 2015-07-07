@@ -35,22 +35,6 @@
 
 */
 
-    // taken from basicBot directly
-    var subChat = function (chat, obj) {
-      if (typeof chat === "undefined") {
-          API.chatLog("There is a chat text missing.");
-          console.log("There is a chat text missing.");
-          return "[Error] No text message found.";
-
-          // TODO: Get missing chat messages from source.
-      }
-      var lit = '%%';
-      for (var prop in obj) {
-          chat = chat.replace(lit + prop.toUpperCase() + lit, obj[prop]);
-      }
-      return chat;
-    };
-
     bot.commands.baconCommand = {
       command: 'bacon',
       rank: 'user',
@@ -365,9 +349,6 @@
       command: 'punish',
       rank: 'user',
       type: 'startsWith',
-      punishbot: "\/me pinches my nipples super hard",
-      punishself: "\/me @%%NAME%%, you're a bit insensitive, aren't you? Maybe someone else wants to be abused!", 
-      punishnoone: "\/me I don't see %%NAME%% in room I guess I'll slap your grandma Adkins' style!",
       functionality: function (chat, cmd) {
         if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
         if (!bot.commands.executable(this.rank, chat)) return void (0);
@@ -376,21 +357,20 @@
 
           var space = msg.indexOf(' ');
           if (space === -1) {
-            API.sendChat(this.punishbot);
+            API.sendChat("/me pinches my nipples super hard");
             return false;
           }
           else {
             var name = msg.substring(space + 2);
             var user = bot.userUtilities.lookupUserName(name);
             if (user === false || !user.inRoom) {
-              return API.sendChat(subChat(this.punishnoone, {name: name}));
+              return API.sendChat("/me I don't see " + name + " in room I guess I'll slap your grandma Adkins' style!");
             }
             else if (user.username === chat.un) {
-              return API.sendChat(bot.subChat(this.punishself, {name: name}));
+              return API.sendChat("\/me " + chat.un ", you're a bit insensitive, aren't you? Maybe someone else wants to be abused!");
             }
             else {
-              //return API.sendChat(subChat(basicBot.chat.cookie, {nameto: user.username, namefrom: chat.un, cookie: this.getCookie()}));
-              API.sendChat("/me testing punish4");
+              return API.sendChat("/me Wowzer! " + chat.un + ", just gave " + name " a wet willy!"); 
             }
           }
         }
