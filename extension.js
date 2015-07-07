@@ -354,18 +354,25 @@
                 if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                 if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                 else {
-                    var msg = chat.message;
-                    var name;
-                    if (msg.length === cmd.length) name = chat.un;
-                    else {
-                        name = msg.substring(cmd.length + 2);
-                        var perm = basicBot.userUtilities.getPermission(chat.uid);
-                        if (perm < 2) return API.sendChat(subChat(basicBot.chat.dclookuprank, {name: chat.un}));
-                    }
+                  var msg = chat.message;
+
+                  var space = msg.indexOf(' ');
+                  if (space === -1) {
+                    API.sendChat("/me testing punish1");
+                    return false;
+                  }
+                  else {
+                    var name = msg.substring(space + 2);
                     var user = basicBot.userUtilities.lookupUserName(name);
-                    if (typeof user === 'boolean') return API.sendChat(subChat(basicBot.chat.invaliduserspecified, {name: chat.un}));
-                    var toChat = basicBot.userUtilities.dclookup(user.id);
-                    API.sendChat(toChat);
+                    if (user === false || !user.inRoom) {
+                      return API.sendChat(subChat(basicBot.chat.nousercookie, {name: name}));
+                    }
+                    else if (user.username === chat.un) {
+                      return API.sendChat(subChat(basicBot.chat.selfcookie, {name: name}));
+                    }
+                    else {
+                      return API.sendChat(subChat(basicBot.chat.cookie, {nameto: user.username, namefrom: chat.un, cookie: this.getCookie()}));
+                    }
                 }
             }
         };
