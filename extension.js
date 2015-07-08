@@ -217,10 +217,10 @@
         if (!bot.commands.executable(this.rank, chat)) return void (0);
         else {
           API.sendChat(":tophat:");
-          setTimeout(function(){API.sendChat(":eyes:")}, 1 * 250);
-          setTimeout(function(){API.sendChat(":nose:")}, 1 * 250);
-          setTimeout(function(){API.sendChat(":tongue:")}, 1 * 250);
-          setTimeout(function(){API.sendChat(":droplet:")}, 1 * 250);
+          setTimeout(function(){API.sendChat(":eyes:")}, 1 * 500);
+          setTimeout(function(){API.sendChat(":nose:")}, 1 * 500);
+          setTimeout(function(){API.sendChat(":tongue:")}, 1 * 500);
+          setTimeout(function(){API.sendChat(":droplet:")}, 1 * 500);
         }
       }
     }; // drool||dom||DOM
