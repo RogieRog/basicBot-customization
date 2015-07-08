@@ -216,7 +216,11 @@
         if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
         if (!bot.commands.executable(this.rank, chat)) return void (0);
         else {
-          API.sendChat(":tophat: \n :eyes: \n :nose: \n :tongue: \n :droplet: \n");
+          API.sendChat(":tophat:");
+          API.sendChat(":eyes:");
+          API.sendChat(":nose:");
+          API.sendChat(":tongue:");
+          API.sendChat(":droplet:");
         }
       }
     }; // drool||dom||DOM
