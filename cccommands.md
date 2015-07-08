@@ -15,6 +15,7 @@ Country Club specfic commands
 |!diffie | | |
 |!dl | | |
 |!dougie | | |
+|!drool/dom/DOM | | |
 |!drunk | | |
 |!jam | | |
 |!jelly | | |

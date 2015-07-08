@@ -208,6 +208,19 @@
       }
     }; // dougie
 
+    bot.commands.droolCommand = {
+      command: ['drool', 'dom', 'DOM'],
+      rank: 'user',
+      type: 'exact',
+      functionality: function (chat, cmd) {
+        if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+        if (!bot.commands.executable(this.rank, chat)) return void (0);
+        else {
+          API.sendChat(":tophat: \n :eyes: \n :nose: \n :tongue: \n :droplet: \n");
+        }
+      }
+    }; // drool||dom||DOM
+
     bot.commands.drunkCommand = {
       command: 'drunk',
       rank: 'user',
