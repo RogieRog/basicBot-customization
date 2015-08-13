@@ -280,6 +280,20 @@
       }
     }; // jive
 
+    bot.commands.josieCommand = {
+      command: 'josie',
+      rank: 'user',
+      type: 'exact',
+      functionality: function (chat, cmd) {
+        if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+        if (!bot.commands.executable(this.rank, chat)) return void (0);
+        else {
+          var quotes = [ ":heart: :purple_heart: :blue_heart: :green_heart: :yellow_heart: :heart: :purple_heart: :blue_heart: :green_heart: :yellow_heart:", ":cocktail:" ];
+          API.sendChat("/me " + quotes[Math.floor(Math.random() * quotes.length)]);
+        }
+      }
+    }; // josie
+
     bot.commands.joviCommand = {
       command: 'jovi',
       rank: 'user',

@@ -20,6 +20,7 @@ Country Club specfic commands
 |!jam | | |
 |!jelly | | |
 |!jive | | |
+|!josie | | |
 |!jovi | | |
 |!lighter | | |
 |!mullet | | |
