@@ -614,7 +614,7 @@
       ["unavailable", "The song you played was not available for some users. "]
     ],
     afkpositionCheck: 15,
-    afkRankCheck: "manager",
+    afkRankCheck: "ambassador",
     motdEnabled: true,
     motdInterval: 5,
     motd: "mmm beer :beers:",
