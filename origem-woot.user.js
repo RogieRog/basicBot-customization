@@ -5,6 +5,8 @@
 // @author         jgm106
 // @include        https://plug.dj/*
 // @version        0.2
+// @updateURL      https://rawgit.com/RogieRog/basicBot-customization/master/cletusLoader.user.js
+// @downloadURL    https://rawgit.com/RogieRog/basicBot-customization/master/cletusLoader.user.js
 // @grant          none
 // ==/UserScript==
 
