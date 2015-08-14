@@ -4,7 +4,9 @@
 // @description    Autorun cletus on plug.dj
 // @author         jgm106
 // @include        https://plug.dj/the-country-club-1
-// @version        0.3
+// @version        0.4
+// @updateURL      https://github.com/RogieRog/basicBot-customization/raw/master/cletusLoader.user.js
+// @downloadURL    https://github.com/RogieRog/basicBot-customization/raw/master/cletusLoader.user.js
 // @grant          none
 // ==/UserScript==
 
