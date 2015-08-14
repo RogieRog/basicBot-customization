@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           origem-woot
-// @namespace      net.cletus
+// @namespace      net.cletus.origem-woot
 // @description    Autorun origem-woot.com plugin on plug.dj
 // @author         jgm106
 // @include        https://plug.dj/*

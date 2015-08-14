@@ -1,14 +1,13 @@
 // ==UserScript==
 // @name           cletusLoader
-// @namespace      net.cletus
+// @namespace      net.cletus.bot
 // @description    Autorun cletus on plug.dj
 // @author         jgm106
 // @include        https://plug.dj/the-country-club-1
-// @version        0.2
-// @updateURL      https://rawgit.com/RogieRog/basicBot-customization/master/cletusLoader.user.js
-// @downloadURL    https://rawgit.com/RogieRog/basicBot-customization/master/cletusLoader.user.js
+// @version        0.3
 // @grant          none
 // ==/UserScript==
+
 
 var a = function() {
   var a = {
